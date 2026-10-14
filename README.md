@@ -2,10 +2,9 @@
 
 Live Demo: https://job-portal-admin-panel-full-stack-c.vercel.app
 
-## 👨‍💼 Admin Login (For Interviewer)
-- Admin: first register then login
-- Recruiter: first register then login
-- Job Seeker: first register then login
+## 👨‍💼 Login (For Interviewer)
+- Recruiter: ` Vardhan@demo.com ` / ` 12345678 `
+- job seeker : first signup then login
 
 ## 🚀 Features
 
