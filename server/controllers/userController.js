@@ -97,7 +97,7 @@ export const updateUserResume = async (req, res) => {
         const userData = await User.findById(userId)
 
         if (resumeFile) {
-            const resumeUpload = await cloudinary.uploader.upload(resumeFile.path)
+            const resumeUpload = await cloudinary.uploader.upload(resumeFile.path, { resource_type: "auto"}) // <--- new line add
             userData.resume = resumeUpload.secure_url
         }
 
