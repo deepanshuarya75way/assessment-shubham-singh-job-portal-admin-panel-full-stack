@@ -5,7 +5,8 @@ const JobApplicationSchema = new mongoose.Schema({
     companyId: { type: mongoose.Schema.Types.ObjectId, ref: 'Company', required: true },
     jobId: { type: mongoose.Schema.Types.ObjectId, ref: 'Job', required: true },
     status: { type: String, default: 'Pending' },
-    date: { type: Number, required: true }
+    date: { type: Number, required: true },
+    resume: { type: String, required: true }  // <--- NEW LINE ADD 
 })
 
 const JobApplication = mongoose.model('JobApplication', JobApplicationSchema)

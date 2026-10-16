@@ -143,7 +143,7 @@ export const getCompanyJobApplicants = async (req, res) => {
 
         // Find job applications for the user and populate related data
         const applications = await JobApplication.find({ companyId })
-            .populate('userId', 'name image resume')
+            .populate('userId', 'name image')
             .populate('jobId', 'title location category level salary')
             .exec()
 

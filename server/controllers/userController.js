@@ -40,17 +40,18 @@ export const applyForJob = async (req, res) => {
             return res.json({ success: false, message: 'Already Applied' })
         }
 
-        const jobData = await Job.findById(jobId)
+        const userData = await User.findById(userId)
 
-        if (!jobData) {
-            return res.json({ success: false, message: 'Job Not Found' })
+        if (!userData.resume) {
+            return res.json({ success: false, message: 'Resume Required' })
         }
 
         await JobApplication.create({
             companyId: jobData.companyId,
             userId,
             jobId,
-            date: Date.now()
+            date: Date.now(),
+            resume: userData.resume
         })
 
         res.json({ success: true, message: 'Applied Successfully' })
